@@ -22,6 +22,11 @@ export default function Navigator(){
     return(
         <Stack.Navigator>
             <Stack.Screen
+                name = 'rCancion'
+                component = {RCancion}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
                 name = 'rPretestPostest'
                 component = {RPretestPostest}
                 options={{ headerShown: false }}
@@ -44,11 +49,6 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'CRUDNoticia'
                 component = {CRUDNoticia}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name = 'rCancion'
-                component = {RCancion}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
