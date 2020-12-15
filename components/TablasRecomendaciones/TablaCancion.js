@@ -27,12 +27,13 @@ const TablaCancion = (props) => {
         db.collection('RCancion').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {nombrecancion, autorcancion, albumcancion} = doc.data() 
+                const {nombrecancion, autorcancion, albumcancion, linkcancion} = doc.data() 
                 respuestas.push({
                     id: doc.id,
                     nombrecancion,
                     autorcancion,
-                    albumcancion
+                    albumcancion,
+                    linkcancion,
                 })
             })
         setRespuestas(respuestas)
@@ -56,6 +57,7 @@ const TablaCancion = (props) => {
                                 <ListItem.Subtitle>Nombre: {respuesta.nombrecancion}</ListItem.Subtitle>
                                 <ListItem.Subtitle>Autor: {respuesta.autorcancion}</ListItem.Subtitle>
                                 <ListItem.Subtitle>Álbum: {respuesta.albumcancion}</ListItem.Subtitle>
+                                <ListItem.Subtitle>Link YouTube: {respuesta.linkcancion}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

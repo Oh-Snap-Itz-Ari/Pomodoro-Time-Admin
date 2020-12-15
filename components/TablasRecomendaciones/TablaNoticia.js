@@ -54,7 +54,6 @@ const TablaNoticia = (props) => {
                             <ListItem.Content>
                                 <ListItem.Title>{respuesta.titulonoticia}:</ListItem.Title>
                                 <ListItem.Subtitle>{respuesta.especificacionnoticia}</ListItem.Subtitle>
-                                <ListItem.Subtitle>Fuente: {respuesta.fuentenoticia}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

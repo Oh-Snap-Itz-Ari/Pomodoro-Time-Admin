@@ -25,6 +25,7 @@ export default function rCancion({navigation}) {
         nombrecancion: "",
         autorcancion: "",
         albumcancion: "",
+        linkcancion: "",
     })
 
     const EstablecerTexto = (nombrecancion, value) => {
@@ -36,6 +37,7 @@ export default function rCancion({navigation}) {
             nombrecancion: state.nombrecancion,
             autorcancion: state.autorcancion,
             albumcancion: state.albumcancion,
+            linkcancion: state.linkcancion,
         })
         Alert.alert('Se ha subido la canción correctamente.')
     }
@@ -48,6 +50,9 @@ export default function rCancion({navigation}) {
             Alert.alert("Debe llenar todos los campos.")
         }
         else if (state.albumcancion===""){
+            Alert.alert("Debe llenar todos los campos.")
+        }
+        else if (state.linkcancion===""){
             Alert.alert("Debe llenar todos los campos.")
         }
         else{
@@ -95,6 +100,10 @@ export default function rCancion({navigation}) {
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el álbum de una canción:</Text>
                     <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el álbum de la canción" onChangeText={(value) => EstablecerTexto('albumcancion', value)}></TextInput>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>Ingresa el link de la canción:</Text>
+                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el link de la canción" onChangeText={(value) => EstablecerTexto('linkcancion', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>
@@ -145,7 +154,6 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flex: 1,
         marginHorizontal: '7%',
-
     },
     btnView:{
         borderRadius: 8,

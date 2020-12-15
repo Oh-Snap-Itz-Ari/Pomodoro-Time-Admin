@@ -25,6 +25,7 @@ const CRUDCancion = (props) => {
         nombrecancion: "",
         autorcancion: "",
         albumcancion: "",
+        linkcancion: "",
     }
 
     const [respuesta, setRespuesta] = useState(initialState);
@@ -62,6 +63,7 @@ const CRUDCancion = (props) => {
             nombrecancion: respuesta.nombrecancion,
             autorcancion: respuesta.autorcancion,
             albumcancion: respuesta.albumcancion,
+            linkcancion: respuesta.linkcancion,
         });
         setRespuesta(initialState)
         props.navigation.navigate('TablaCancion')
@@ -95,6 +97,10 @@ const CRUDCancion = (props) => {
             <View style={styles.center}>
                 <Text style={styles.text}>Álbum de la canción:</Text>
                     <TextInput style={{marginVertical: '2%'}} value={respuesta.albumcancion} onChangeText={(value) => EstablecerTexto("albumcancion", value)}></TextInput>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>Link de la canción:</Text>
+                    <TextInput style={{marginVertical: '2%'}} value={respuesta.linkcancion} onChangeText={(value) => EstablecerTexto("linkcancion", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>

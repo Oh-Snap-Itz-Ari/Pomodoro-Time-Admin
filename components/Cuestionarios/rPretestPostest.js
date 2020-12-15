@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {View, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Alert} from 'react-native'
+import React from 'react'
+import {View, ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native'
 import 'firebase/firestore'
 import {Icon} from 'react-native-elements'
 
@@ -47,6 +47,13 @@ export default function rPretestPostest({navigation}) {
                 <TouchableOpacity onPress={() => navigation.navigate('rPostest')}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Postest</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('CSeguimiento')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Cuestionario de Seguimiento</Text>
                 </View>
                 </TouchableOpacity>
             </View>

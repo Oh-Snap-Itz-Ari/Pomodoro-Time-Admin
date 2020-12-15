@@ -2,6 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import RPretest from '../components/Cuestionarios/rPretest'
 import RPostest from '../components/Cuestionarios/rPostest'
+import CSeguimiento from '../components/Cuestionarios/cSeguimiento'
 import RPretestPostest from '../components/Cuestionarios/rPretestPostest'
 import RNoticia from '../components/Recomendaciones/rNoticia'
 import RFrase from '../components/Recomendaciones/rFrase'
@@ -24,6 +25,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'rCancion'
                 component = {RCancion}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'CSeguimiento'
+                component = {CSeguimiento}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
