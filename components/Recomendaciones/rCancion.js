@@ -40,6 +40,7 @@ export default function rCancion({navigation}) {
             linkcancion: state.linkcancion,
         })
         Alert.alert('Se ha subido la canción correctamente.')
+        this.state= {nombrecancion:""};
     }
 
     const Confirmacion = () => {
@@ -91,7 +92,7 @@ export default function rCancion({navigation}) {
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el nombre de una canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
+                    <TextInput name= "nombre" style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el autor de una canción:</Text>
