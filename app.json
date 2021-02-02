@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "AdminPomodoro",
+    "name": "Pomodoro Time Admin",
     "slug": "AdminPomodoro",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,10 +20,8 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+      "package": "com.mrinsheloots.pomodorotimeadmin",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
