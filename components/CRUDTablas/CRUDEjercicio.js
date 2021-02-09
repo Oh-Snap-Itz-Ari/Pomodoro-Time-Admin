@@ -64,10 +64,14 @@ const CRUDEjercicio = (props) => {
     }
 
     const Confirmacion = () => {
-        Alert.alert('Eliminar', '¿Estás seguro que lo quieres eliminar?', [
-            {text: 'Cancelar', onPress: console.log(false) },
-            {text: 'Aceptar', onPress: () => deleteRespuesta()},
-        ])
+        Alert.alert('⚠️ Eliminar Ejercicio', 
+        '¿Estás seguro que lo quieres eliminar?', 
+        [
+            {text: 'Cancel', onPress: console.log(false) },
+            {text: 'OK', onPress: () => deleteRespuesta()},
+        ],
+        { cancelable: false }
+        )
     }
 
     if (loading){

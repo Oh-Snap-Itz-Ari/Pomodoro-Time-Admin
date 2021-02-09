@@ -39,23 +39,78 @@ export default function rCancion({navigation}) {
             albumcancion: state.albumcancion,
             linkcancion: state.linkcancion,
         })
-        Alert.alert('Se ha subido la canción correctamente.')
-        this.state= {nombrecancion:""};
+        Alert.alert(
+            '✅ Proceso exitoso',
+            'Ha subido la canción correctamente.',
+        )
     }
 
     const Confirmacion = () => {
-        if (state.nombrecancion===""){
-            Alert.alert("Debe llenar todos los campos.")
+        if(state.nombrecancion === '' && state.autorcancion === '' && state.albumcancion === '' && state.linkcancion === ''){
+            Alert.alert(
+              '⚠️ Campos vacios',
+              'Debe de llenar todos los campos.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
         }
-        else if (state.autorcancion===""){
-            Alert.alert("Debe llenar todos los campos.")
+        
+        else if(state.nombrecancion === ''){
+              Alert.alert(
+                '⚠️ Nombre de la canción',
+                'El campo de nombre esta vacío.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+            )
         }
-        else if (state.albumcancion===""){
-            Alert.alert("Debe llenar todos los campos.")
-        }
-        else if (state.linkcancion===""){
-            Alert.alert("Debe llenar todos los campos.")
-        }
+
+        else if(state.autorcancion === ''){
+            Alert.alert(
+              '⚠️ Autor de la canción',
+              'El campo de autor esta vacío.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+
+        else if(state.albumcancion === ''){
+            Alert.alert(
+              '⚠️ Álbum de la canción',
+              'El campo de álbum esta vacío.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+
+        else if(state.linkcancion === ''){
+            Alert.alert(
+              '⚠️ Link de la canción',
+              'El campo de link esta vacío.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+      
         else{
             crearCancion();
         }
@@ -63,33 +118,6 @@ export default function rCancion({navigation}) {
 
     return (
             <ScrollView>
-            <View style={styles.container}>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rCancion')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='music' color='#135D81' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rEjercicio')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='heartbeat' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rFrase')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='font' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rNoticia')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='globe' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rPretestPostest')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='book' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el nombre de una canción:</Text>
                     <TextInput name= "nombre" style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>

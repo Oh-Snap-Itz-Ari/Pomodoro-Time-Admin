@@ -70,10 +70,14 @@ const CRUDCancion = (props) => {
     }
 
     const Confirmacion = () => {
-        Alert.alert('Eliminar', '¿Estás seguro que lo quieres eliminar?', [
-            {text: 'Cancelar', onPress: console.log(false) },
-            {text: 'Aceptar', onPress: () => deleteRespuesta()},
-        ])
+        Alert.alert('⚠️ Eliminar Canción', 
+        '¿Estás seguro que la quieres eliminar?', 
+        [
+            {text: 'Cancel', onPress: console.log(false) },
+            {text: 'OK', onPress: () => deleteRespuesta()},
+        ],
+        { cancelable: false }
+        )
     }
 
     if (loading){

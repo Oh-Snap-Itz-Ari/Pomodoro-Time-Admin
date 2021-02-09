@@ -1,5 +1,6 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
+import MainHome from '../components/MainHome'
 import RPretest from '../components/Cuestionarios/rPretest'
 import RPostest from '../components/Cuestionarios/rPostest'
 import CSeguimiento from '../components/Cuestionarios/cSeguimiento'
@@ -22,6 +23,11 @@ const Stack = createStackNavigator()
 export default function Navigator(){
     return(
         <Stack.Navigator>
+            <Stack.Screen
+                name = 'MainHome'
+                component = {MainHome}
+                options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name = 'rCancion'
                 component = {RCancion}

@@ -37,19 +37,66 @@ export default function rNoticia({navigation}) {
             especificacionnoticia: state.especificacionnoticia,
             fuentenoticia: state.fuentenoticia,
         })
-        Alert.alert('Se ha subido la noticia correctamente.')
+        Alert.alert(
+            '✅ Proceso exitoso',
+            'Ha subido la noticia correctamente.',
+        )
     }
 
     const Confirmacion = () => {
-        if (state.titulonoticia===""){
-            Alert.alert("Debe llenar todos los campos.")
+        
+        if(state.titulonoticia === '' && state.especificacionnoticia === '' && state.fuentenoticia === ''){
+            Alert.alert(
+              '⚠️ Campos vacios',
+              'Debe de llenar todos los campos.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
         }
-        else if (state.especificacionnoticia===""){
-            Alert.alert("Debe llenar todos los campos.")
+        
+        else if(state.titulonoticia === ''){
+              Alert.alert(
+                '⚠️ Titulo de la noticia',
+                'El campo de titulo esta vacío.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+            )
         }
-        else if (state.fuentenoticia===""){
-            Alert.alert("Debe llenar todos los campos.")
-        }
+
+        else if(state.especificacionnoticia === ''){
+            Alert.alert(
+              '⚠️ Especificación de la noticia',
+              'El campo de especificación esta vacío.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+
+        else if(state.fuentenoticia === ''){
+            Alert.alert(
+              '⚠️ Fuente de la noticia',
+              'El campo de fuente esta vacío.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+        
         else{
             crearNoticia();
         }
@@ -57,33 +104,6 @@ export default function rNoticia({navigation}) {
 
     return (
             <ScrollView>
-            <View style={styles.container}>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rCancion')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='music' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rEjercicio')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='heartbeat' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rFrase')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='font' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rNoticia')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='globe' color='#135D81' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('rPretestPostest')}>
-                <View style={styles.buttonContainer}>
-                    <Icon name='book' color='#3491cd' type='font-awesome'/>
-                </View>
-            </TouchableOpacity>
-            </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa un titulo para la noticia:</Text>
                     <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el titulo de la noticia" onChangeText={(value) => EstablecerTexto('titulonoticia', value)}></TextInput>
