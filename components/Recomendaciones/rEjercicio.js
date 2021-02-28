@@ -61,7 +61,7 @@ export default function rEjercicio({navigation}) {
             <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa un ejercicio para recomendar:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el ejercicio" onChangeText={(value) => EstablecerTexto('ejercicio', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el ejercicio" onChangeText={(value) => EstablecerTexto('ejercicio', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>

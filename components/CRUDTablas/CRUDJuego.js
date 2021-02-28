@@ -18,13 +18,13 @@ if (!firebase.apps.length){
 }
 const db = firebase.firestore();
 
-const CRUDNoticia = (props) => {
+const CRUDJuego = (props) => {
     
     const initialState = {
         id: "",
-        titulonoticia: "",
-        especificacionnoticia: "",
-        fuentenoticia: ""
+        titulojuego: "",
+        desarrolladorjuego: "",
+        fuentejuego: ""
     }
 
     const [respuesta, setRespuesta] = useState(initialState);
@@ -32,7 +32,7 @@ const CRUDNoticia = (props) => {
     const [loading, setLoading] = useState(true)
 
     const getDataById = async (id) => {
-        const dbRef = db.collection('RNoticia').doc(id);
+        const dbRef = db.collection('RJuego').doc(id);
         const doc = await dbRef.get();
         const respuesta = doc.data();
         setRespuesta({
@@ -46,29 +46,29 @@ const CRUDNoticia = (props) => {
         getDataById(props.route.params.respuestaId);
     }, []);
 
-    const EstablecerTexto = (titulonoticia, value) => {
-        setRespuesta({ ...respuesta, [titulonoticia]: value})
+    const EstablecerTexto = (titulojuego, value) => {
+        setRespuesta({ ...respuesta, [titulojuego]: value})
     };
 
     const deleteRespuesta = async() => {
-        const dbRef = db.collection('RNoticia').doc(props.route.params.respuestaId);
+        const dbRef = db.collection('RJuego').doc(props.route.params.respuestaId);
         await dbRef.delete();
-        props.navigation.navigate('TablaNoticia')
+        props.navigation.navigate('TablaJuego')
     }
 
     const updateRespuesta = async() => {
-        const dbRef = db.collection('RNoticia').doc(respuesta.id);
+        const dbRef = db.collection('RJuego').doc(respuesta.id);
         await dbRef.set({
-            titulonoticia: respuesta.titulonoticia,
-            especificacionnoticia: respuesta.especificacionnoticia,
-            fuentenoticia: respuesta.fuentenoticia,
+            titulojuego: respuesta.titulojuego,
+            desarrolladorjuego: respuesta.desarrolladorjuego,
+            fuentejuego: respuesta.fuentejuego,
         });
         setRespuesta(initialState)
-        props.navigation.navigate('TablaNoticia')
+        props.navigation.navigate('TablaJuego')
     }
 
     const Confirmacion = () => {
-        Alert.alert('⚠️ Eliminar Noticia', 
+        Alert.alert('⚠️ Eliminar Juego', 
         '¿Estás seguro que la quieres eliminar?', 
         [
             {text: 'Cancel', onPress: console.log(false) },
@@ -89,16 +89,16 @@ const CRUDNoticia = (props) => {
     return(
         <ScrollView>
             <View style={styles.center}>
-                <Text style={styles.text}>Titulo de la Noticia:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.titulonoticia} onChangeText={(value) => EstablecerTexto("titulonoticia", value)}></TextInput>
+                <Text style={styles.text}>Titulo del juego:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.titulojuego} onChangeText={(value) => EstablecerTexto("titulojuego", value)}></TextInput>
             </View>
             <View style={styles.center}>
-                <Text style={styles.text}>Especificacion de la Noticia:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.especificacionnoticia} onChangeText={(value) => EstablecerTexto("especificacionnoticia", value)}></TextInput>
+                <Text style={styles.text}>Desarrollador del juego:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.desarrolladorjuego} onChangeText={(value) => EstablecerTexto("desarrolladorjuego", value)}></TextInput>
             </View>
             <View style={styles.center}>
-                <Text style={styles.text}>Fuente de la Noticia:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.fuentenoticia} onChangeText={(value) => EstablecerTexto("fuentenoticia", value)}></TextInput>
+                <Text style={styles.text}>Fuente del juego:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.fuentejuego} onChangeText={(value) => EstablecerTexto("fuentejuego", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>
@@ -119,7 +119,7 @@ const CRUDNoticia = (props) => {
     )
 }
 
-export default CRUDNoticia;
+export default CRUDJuego;
 
 const styles = StyleSheet.create({
     center: {

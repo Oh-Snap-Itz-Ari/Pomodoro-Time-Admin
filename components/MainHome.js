@@ -10,6 +10,7 @@ import RNoticia from './Recomendaciones/rNoticia'
 import RFrase from './Recomendaciones/rFrase'
 import RCancion from './Recomendaciones/rCancion'
 import REjercicio from './Recomendaciones/rEjercicio'
+import RJuego from './Recomendaciones/rJuego'
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,6 +27,17 @@ const MainTabScreen = () => (
           tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-musical-notes" color={color} size={25} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="RJuego"
+        component={RJuego}
+        options={{
+          tabBarLabel: 'Juego',
+          tabBarColor: '#1f65ff',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="ios-game-controller" color={color} size={25} />
           ),
         }}
       />
@@ -66,7 +78,7 @@ const MainTabScreen = () => (
         name="RPretestPostest"
         component={RPretestPostest}
         options={{
-          tabBarLabel: 'Cuestionario',
+          tabBarLabel: 'Test',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-document" color={color} size={25} />

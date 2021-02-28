@@ -86,7 +86,7 @@ const CRUDEjercicio = (props) => {
         <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Sugerencia de ejercicio:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.ejercicio} onChangeText={(value) => EstablecerTexto("ejercicio", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.ejercicio} onChangeText={(value) => EstablecerTexto("ejercicio", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>

@@ -7,16 +7,19 @@ import CSeguimiento from '../components/Cuestionarios/cSeguimiento'
 import RPretestPostest from '../components/Cuestionarios/rPretestPostest'
 import RNoticia from '../components/Recomendaciones/rNoticia'
 import RFrase from '../components/Recomendaciones/rFrase'
+import RJuego from '../components/Recomendaciones/rJuego'
 import RCancion from '../components/Recomendaciones/rCancion'
 import REjercicio from '../components/Recomendaciones/rEjercicio'
 import TablaCancion from '../components/TablasRecomendaciones/TablaCancion'
 import TablaEjercicio from '../components/TablasRecomendaciones/TablaEjercicio'
 import TablaFrase from '../components/TablasRecomendaciones/TablaFrase'
 import TablaNoticia from '../components/TablasRecomendaciones/TablaNoticia'
+import TablaJuego from '../components/TablasRecomendaciones/TablaJuego'
 import CRUDCancion from '../components/CRUDTablas/CRUDCancion'
 import CRUDEjercicio from '../components/CRUDTablas/CRUDEjercicio'
 import CRUDFrase from '../components/CRUDTablas/CRUDFrase'
 import CRUDNoticia from '../components/CRUDTablas/CRUDNoticia'
+import CRUDJuego from '../components/CRUDTablas/CRUDJuego'
 
 const Stack = createStackNavigator()
 
@@ -64,6 +67,11 @@ export default function Navigator(){
                 options={{ headerShown: false }}
             />
             <Stack.Screen
+                name = 'CRUDJuego'
+                component = {CRUDJuego}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
                 name = 'TablaCancion'
                 component = {TablaCancion}
                 options={{ headerShown: false }}
@@ -81,6 +89,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'TablaNoticia'
                 component = {TablaNoticia}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'TablaJuego'
+                component = {TablaJuego}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
@@ -106,6 +119,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'rNoticia'
                 component = {RNoticia}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rJuego'
+                component = {RJuego}
                 options={{ headerShown: false }}
             />
             

@@ -120,19 +120,19 @@ export default function rCancion({navigation}) {
             <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el nombre de una canción:</Text>
-                    <TextInput name= "nombre" style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} name= "nombre" style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el autor de una canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el autor de la canción" onChangeText={(value) => EstablecerTexto('autorcancion', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el autor de la canción" onChangeText={(value) => EstablecerTexto('autorcancion', value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el álbum de una canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el álbum de la canción" onChangeText={(value) => EstablecerTexto('albumcancion', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el álbum de la canción" onChangeText={(value) => EstablecerTexto('albumcancion', value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el link de la canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el link de la canción" onChangeText={(value) => EstablecerTexto('linkcancion', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el link de la canción" onChangeText={(value) => EstablecerTexto('linkcancion', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>

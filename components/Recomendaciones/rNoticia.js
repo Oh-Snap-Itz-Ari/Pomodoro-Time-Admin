@@ -106,15 +106,15 @@ export default function rNoticia({navigation}) {
             <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa un titulo para la noticia:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa el titulo de la noticia" onChangeText={(value) => EstablecerTexto('titulonoticia', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el titulo de la noticia" onChangeText={(value) => EstablecerTexto('titulonoticia', value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa una especificación para la noticia:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa la especificación de la noticia" onChangeText={(value) => EstablecerTexto('especificacionnoticia', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa la especificación de la noticia" onChangeText={(value) => EstablecerTexto('especificacionnoticia', value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa la fuente de la noticia:</Text>
-                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingresa la fuente de la noticia" onChangeText={(value) => EstablecerTexto('fuentenoticia', value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa la fuente de la noticia" onChangeText={(value) => EstablecerTexto('fuentenoticia', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>

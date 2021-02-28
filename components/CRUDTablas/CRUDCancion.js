@@ -92,19 +92,19 @@ const CRUDCancion = (props) => {
         <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Nombre de la canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.nombrecancion} onChangeText={(value) => EstablecerTexto("nombrecancion", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.nombrecancion} onChangeText={(value) => EstablecerTexto("nombrecancion", value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Autor de la canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.autorcancion} onChangeText={(value) => EstablecerTexto("autorcancion", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.autorcancion} onChangeText={(value) => EstablecerTexto("autorcancion", value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Álbum de la canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.albumcancion} onChangeText={(value) => EstablecerTexto("albumcancion", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.albumcancion} onChangeText={(value) => EstablecerTexto("albumcancion", value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Link de la canción:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.linkcancion} onChangeText={(value) => EstablecerTexto("linkcancion", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.linkcancion} onChangeText={(value) => EstablecerTexto("linkcancion", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>

@@ -88,11 +88,11 @@ const CRUDFrase = (props) => {
         <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Frase:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.frase} onChangeText={(value) => EstablecerTexto("frase", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.frase} onChangeText={(value) => EstablecerTexto("frase", value)}></TextInput>
             </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Autor de la frase:</Text>
-                    <TextInput style={{marginVertical: '2%'}} value={respuesta.autorfrase} onChangeText={(value) => EstablecerTexto("autorfrase", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.autorfrase} onChangeText={(value) => EstablecerTexto("autorfrase", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>
