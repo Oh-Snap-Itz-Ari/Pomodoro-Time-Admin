@@ -27,16 +27,13 @@ export default function cSeguimiento({navigation}) {
         db.collection('CSeguimiento').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {primera, segunda, tercera, cuarta, quinta, sexta, septima} = doc.data() 
+                const {primera, segunda, tercera, cuarta} = doc.data() 
                 respuestas.push({
                     id: doc.id,
                     primera,
                     segunda,
                     tercera,
                     cuarta,
-                    quinta,
-                    sexta,
-                    septima,
                 })
             })
         setRespuestas(respuestas)
@@ -58,9 +55,6 @@ export default function cSeguimiento({navigation}) {
                                 <ListItem.Subtitle>2. ¿Durante esta semana cuántas veces al día utilizó Pomodoro Time?: {respuesta.segunda}</ListItem.Subtitle>
                                 <ListItem.Subtitle>3. ¿Durante esta semana cuánto duró en culminar una actividad aproximadamente?: {respuesta.tercera}</ListItem.Subtitle>
                                 <ListItem.Subtitle>4. ¿Cuántas veces a la semana utilizo Pomodoro Time aproximadamente?: {respuesta.cuarta}</ListItem.Subtitle>
-                                <ListItem.Subtitle>5. ¿En esta semana qué prefirió al momento de la realización de una actividad?: {respuesta.quinta}</ListItem.Subtitle>
-                                <ListItem.Subtitle>6. ¿Qué recomendación fue la que le resulto más interesante durante el transcurso de la semana?: {respuesta.sexta}</ListItem.Subtitle>
-                                <ListItem.Subtitle>7. ¿Considera que durante la realización de las actividades fue más productivo gracias a la utilización de Pomodoro Time?: {respuesta.septima}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );
