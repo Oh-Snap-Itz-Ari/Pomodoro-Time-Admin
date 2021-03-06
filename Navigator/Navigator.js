@@ -4,7 +4,7 @@ import MainHome from '../components/MainHome'
 import RPretest from '../components/Cuestionarios/rPretest'
 import RPostest from '../components/Cuestionarios/rPostest'
 import CSeguimiento from '../components/Cuestionarios/cSeguimiento'
-import RPretestPostest from '../components/Cuestionarios/rPretestPostest'
+import RPretestPostestH from '../components/Cuestionarios/rPretestPostest'
 import RNoticia from '../components/Recomendaciones/rNoticia'
 import RFrase from '../components/Recomendaciones/rFrase'
 import RJuego from '../components/Recomendaciones/rJuego'
@@ -20,6 +20,11 @@ import CRUDEjercicio from '../components/CRUDTablas/CRUDEjercicio'
 import CRUDFrase from '../components/CRUDTablas/CRUDFrase'
 import CRUDNoticia from '../components/CRUDTablas/CRUDNoticia'
 import CRUDJuego from '../components/CRUDTablas/CRUDJuego'
+import RNoticiaH from '../components/homeNoticia'
+import RFraseH from '../components/homeFrase'
+import RCancionH from '../components/homeCancion'
+import REjercicioH from '../components/homeEjercicio'
+import RJuegoH from '../components/homeJuego'
 
 const Stack = createStackNavigator()
 
@@ -32,18 +37,38 @@ export default function Navigator(){
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name = 'rCancion'
-                component = {RCancion}
+                name = 'rNoticiaH'
+                component = {RNoticiaH}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rFraseH'
+                component = {RFraseH}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rCancionH'
+                component = {RCancionH}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rEjercicioH'
+                component = {REjercicioH}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rJuegoH'
+                component = {RJuegoH}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rPretestPostestH'
+                component = {RPretestPostestH}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name = 'CSeguimiento'
                 component = {CSeguimiento}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name = 'rPretestPostest'
-                component = {RPretestPostest}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
@@ -104,6 +129,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'rFrase'
                 component = {RFrase}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'rCancion'
+                component = {RCancion}
                 options={{ headerShown: false }}
             />
             <Stack.Screen

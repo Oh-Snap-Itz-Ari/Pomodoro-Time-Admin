@@ -5,23 +5,23 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import { Ionicons } from '@expo/vector-icons';
 
-import RPretestPostest from './Cuestionarios/rPretestPostest'
-import RNoticia from './Recomendaciones/rNoticia'
-import RFrase from './Recomendaciones/rFrase'
-import RCancion from './Recomendaciones/rCancion'
-import REjercicio from './Recomendaciones/rEjercicio'
-import RJuego from './Recomendaciones/rJuego'
+import RPretestPostestH from './Cuestionarios/rPretestPostest'
+import RNoticiaH from './homeNoticia'
+import RFraseH from './homeFrase'
+import RCancionH from './homeCancion'
+import REjercicioH from './homeEjercicio'
+import RJuegoH from './homeJuego'
 
 const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
     <Tab.Navigator
-      initialRouteName="RCancion"
+      initialRouteName="rCancionH"
       activeColor="#fff"
     >
       <Tab.Screen
-        name="RCancion"
-        component={RCancion}
+        name="rCancionH"
+        component={RCancionH}
         options={{
           tabBarLabel: 'Canción',
           tabBarColor: '#1f65ff',
@@ -31,8 +31,8 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="RJuego"
-        component={RJuego}
+        name="rJuegoH"
+        component={RJuegoH}
         options={{
           tabBarLabel: 'Juego',
           tabBarColor: '#1f65ff',
@@ -42,8 +42,8 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="REjercicio"
-        component={REjercicio}
+        name="rEjercicioH"
+        component={REjercicioH}
         options={{
           tabBarLabel: 'Ejercicio',
           tabBarColor: '#1f65ff',
@@ -53,8 +53,8 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="RFrase"
-        component={RFrase}
+        name="rFraseH"
+        component={RFraseH}
         options={{
           tabBarLabel: 'Frase',
           tabBarColor: '#1f65ff',
@@ -64,8 +64,8 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="RNoticia"
-        component={RNoticia}
+        name="rNoticiaH"
+        component={RNoticiaH}
         options={{
           tabBarLabel: 'Noticia',
           tabBarColor: '#1f65ff',
@@ -75,8 +75,8 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="RPretestPostest"
-        component={RPretestPostest}
+        name="rPretestPostestH"
+        component={RPretestPostestH}
         options={{
           tabBarLabel: 'Test',
           tabBarColor: '#1f65ff',
