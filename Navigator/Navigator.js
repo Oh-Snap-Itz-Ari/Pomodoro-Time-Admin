@@ -1,6 +1,7 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import MainHome from '../components/MainHome'
+import LoginScreen from '../components/LoginScreen'
 import RPretest from '../components/Cuestionarios/rPretest'
 import RPostest from '../components/Cuestionarios/rPostest'
 import CSeguimiento from '../components/Cuestionarios/cSeguimiento'
@@ -31,6 +32,11 @@ const Stack = createStackNavigator()
 export default function Navigator(){
     return(
         <Stack.Navigator>
+            <Stack.Screen
+                name = 'LoginScreen'
+                component = {LoginScreen}
+                options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name = 'MainHome'
                 component = {MainHome}
