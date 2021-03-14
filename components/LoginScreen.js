@@ -37,10 +37,22 @@ export default class login extends React.Component{
               this.setState({error:'',loading:false});
               this.props.navigation.navigate('MainHome');}
 
-              else if(email === 'aparenas@ucundinamarca.edu.co'){
+            else if(email === 'aparenas@ucundinamarca.edu.co'){
                 this.setState({error:'',loading:false});
                 this.props.navigation.navigate('MainHome');}
-
+            else{
+            Alert.alert(
+              '⚠️ Datos invalidos',
+              'Los datos que ingresaste no coinciden con los de un administrador.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
+            }
+            
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
