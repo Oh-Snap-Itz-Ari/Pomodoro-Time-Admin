@@ -41,9 +41,8 @@ const TablaCancion = (props) => {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Recomendaciones de canciones:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
@@ -53,7 +52,7 @@ const TablaCancion = (props) => {
                         })}}>
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>Canción:</ListItem.Title>
+                                <ListItem.Title>Canción</ListItem.Title>
                                 <ListItem.Subtitle>Nombre: {respuesta.nombrecancion}</ListItem.Subtitle>
                                 <ListItem.Subtitle>Autor: {respuesta.autorcancion}</ListItem.Subtitle>
                                 <ListItem.Subtitle>Álbum: {respuesta.albumcancion}</ListItem.Subtitle>
@@ -69,11 +68,13 @@ const TablaCancion = (props) => {
 export default TablaCancion;
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

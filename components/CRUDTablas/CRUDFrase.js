@@ -85,7 +85,7 @@ const CRUDFrase = (props) => {
     }
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Frase:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.frase} onChangeText={(value) => EstablecerTexto("frase", value)}></TextInput>
@@ -116,10 +116,13 @@ const CRUDFrase = (props) => {
 export default CRUDFrase;
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingTop: '8%',
         marginHorizontal: '4%'
     },
     questions: {
@@ -130,6 +133,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
+        fontWeight: 'bold'
     },
     buttonText: {
         color: 'white',

@@ -26,9 +26,10 @@ export default function homeCancion({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 30,
+        paddingTop: 30,
         flexDirection: "column",
         justifyContent: "center",
+        backgroundColor: "white",
     },
     top: {
         paddingHorizontal: 24,

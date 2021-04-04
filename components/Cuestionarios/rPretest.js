@@ -47,16 +47,15 @@ export default function rPretest({navigation}) {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Listado de respuestas Pretest</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
                         <ListItem key={respuesta.id} bottomDivider> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>Respuesta Pretest:</ListItem.Title>
+                                <ListItem.Title>Respuesta</ListItem.Title>
                                 <ListItem.Subtitle>1. Edad: {respuesta.primera}</ListItem.Subtitle>
                                 <ListItem.Subtitle>2. Genero: {respuesta.segunda}</ListItem.Subtitle>
                                 <ListItem.Subtitle>3. ¿Qué semestre cursa actualmente?: {respuesta.tercera}</ListItem.Subtitle>
@@ -77,11 +76,13 @@ export default function rPretest({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

@@ -87,7 +87,7 @@ const CRUDNoticia = (props) => {
     }
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Titulo de la Noticia:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.titulonoticia} onChangeText={(value) => EstablecerTexto("titulonoticia", value)}></TextInput>
@@ -122,10 +122,13 @@ const CRUDNoticia = (props) => {
 export default CRUDNoticia;
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingTop: '8%',
         marginHorizontal: '4%'
     },
     questions: {
@@ -136,6 +139,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
+        fontWeight: 'bold'
     },
     buttonText: {
         color: 'white',

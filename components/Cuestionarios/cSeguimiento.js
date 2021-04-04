@@ -41,20 +41,19 @@ export default function cSeguimiento({navigation}) {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Listado de respuestas Cuestionario de Seguimiento</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
                         <ListItem key={respuesta.id} bottomDivider> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>Respuesta:</ListItem.Title>
+                                <ListItem.Title>Respuesta</ListItem.Title>
                                 <ListItem.Subtitle>1. Correo electrónico: {respuesta.primera}</ListItem.Subtitle>
-                                <ListItem.Subtitle>2. ¿Durante esta semana cuántas veces al día utilizó Pomodoro Time?: {respuesta.segunda}</ListItem.Subtitle>
-                                <ListItem.Subtitle>3. ¿Durante esta semana cuánto duró en culminar una actividad aproximadamente?: {respuesta.tercera}</ListItem.Subtitle>
-                                <ListItem.Subtitle>4. ¿Cuántas veces a la semana utilizo Pomodoro Time aproximadamente?: {respuesta.cuarta}</ListItem.Subtitle>
+                                <ListItem.Subtitle>2. ¿Durante esta semana cuántas veces al día utilizó Pomodoro Time? - {respuesta.segunda}</ListItem.Subtitle>
+                                <ListItem.Subtitle>3. ¿Durante esta semana cuánto duró en culminar una actividad aproximadamente? - {respuesta.tercera}</ListItem.Subtitle>
+                                <ListItem.Subtitle>4. ¿Cuántas veces a la semana utilizo Pomodoro Time aproximadamente? - {respuesta.cuarta}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );
@@ -64,11 +63,13 @@ export default function cSeguimiento({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

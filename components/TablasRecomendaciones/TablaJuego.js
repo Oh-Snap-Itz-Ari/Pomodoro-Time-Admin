@@ -40,9 +40,8 @@ const TablaJuego = (props) => {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Juegos:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
@@ -53,7 +52,7 @@ const TablaJuego = (props) => {
                             <ListItem.Chevron/>
                             <ListItem.Content>
                                 <ListItem.Title>{respuesta.titulojuego}</ListItem.Title>
-                                <ListItem.Subtitle>{respuesta.desarrolladorjuego}</ListItem.Subtitle>
+                                <ListItem.Subtitle>Desarrolladora: {respuesta.desarrolladorjuego}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );
@@ -66,11 +65,13 @@ const TablaJuego = (props) => {
 export default TablaJuego;
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

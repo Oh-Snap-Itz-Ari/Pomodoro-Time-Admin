@@ -39,9 +39,8 @@ const TablaFrase = (props) => {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Listado de Frases de diferentes autores:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
@@ -51,7 +50,7 @@ const TablaFrase = (props) => {
                         })}}>
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>Frase:</ListItem.Title>
+                                <ListItem.Title>Frase</ListItem.Title>
                                 <ListItem.Subtitle>"{respuesta.frase}"</ListItem.Subtitle>
                                 <ListItem.Subtitle>- {respuesta.autorfrase}</ListItem.Subtitle>
                             </ListItem.Content>
@@ -66,11 +65,13 @@ const TablaFrase = (props) => {
 export default TablaFrase;
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

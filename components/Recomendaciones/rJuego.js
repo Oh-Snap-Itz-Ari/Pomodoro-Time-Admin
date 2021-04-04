@@ -103,7 +103,7 @@ export default function rJuego({navigation}) {
     }
 
     return (
-            <ScrollView>
+            <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa un titulo para el juego:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el titulo del juego" onChangeText={(value) => EstablecerTexto('titulojuego', value)}></TextInput>
@@ -136,10 +136,13 @@ export default function rJuego({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingTop: '7%',
         marginHorizontal: '4%'
     },
     questions: {
@@ -150,6 +153,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
+        fontWeight: 'bold'
     },
     buttonText: {
         color: 'white',

@@ -38,9 +38,8 @@ const TablaEjercicio = (props) => {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Recomendaciones de ejercicios:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
@@ -50,7 +49,7 @@ const TablaEjercicio = (props) => {
                         })}}>
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>Ejercicio:</ListItem.Title>
+                                <ListItem.Title>Ejercicio</ListItem.Title>
                                 <ListItem.Subtitle>{respuesta.ejercicio}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
@@ -64,11 +63,13 @@ const TablaEjercicio = (props) => {
 export default TablaEjercicio;
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

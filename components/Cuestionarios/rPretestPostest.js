@@ -11,21 +11,21 @@ export default function rPretestPostest({navigation}) {
         ])
     }
     return (
-            <ScrollView>
+            <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Seleccione que cuestionario desea observar:</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('rPretest')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Pretest</Text>
+                    <Text style={styles.buttonText}>Cuestionario de Pretest</Text>
                 </View>
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('rPostest')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Postest</Text>
+                    <Text style={styles.buttonText}>Cuestionario de Postest</Text>
                 </View>
                 </TouchableOpacity>
             </View>
@@ -49,6 +49,9 @@ export default function rPretestPostest({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background:{
+        backgroundColor: "white",
+    },
     center: {
         flex: 1,
         width: '80%',

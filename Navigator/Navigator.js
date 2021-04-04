@@ -75,92 +75,92 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'CSeguimiento'
                 component = {CSeguimiento}
-                options={{ headerShown: false }}
+                options={{title:"Cuestionario de Seguimiento"}}
             />
             <Stack.Screen
                 name = 'CRUDCancion'
                 component = {CRUDCancion}
-                options={{ headerShown: false }}
+                options={{title:"Actualizar Canción"}}
             />
             <Stack.Screen
                 name = 'CRUDEjercicio'
                 component = {CRUDEjercicio}
-                options={{ headerShown: false }}
+                options={{title:"Actualizar Ejercicio"}}
             />
             <Stack.Screen
                 name = 'CRUDFrase'
                 component = {CRUDFrase}
-                options={{ headerShown: false }}
+                options={{title:"Actualizar Frase"}}
             />
             <Stack.Screen
                 name = 'CRUDNoticia'
                 component = {CRUDNoticia}
-                options={{ headerShown: false }}
+                options={{title:"Actualizar Noticia"}}
             />
             <Stack.Screen
                 name = 'CRUDJuego'
                 component = {CRUDJuego}
-                options={{ headerShown: false }}
+                options={{title:"Actualizar Juego"}}
             />
             <Stack.Screen
                 name = 'TablaCancion'
                 component = {TablaCancion}
-                options={{ headerShown: false }}
+                options={{title:"Listado de Canciones"}}
             />
             <Stack.Screen
                 name = 'TablaEjercicio'
                 component = {TablaEjercicio}
-                options={{ headerShown: false }}
+                options={{title:"Listado de Ejercicios"}}
             />
             <Stack.Screen
                 name = 'TablaFrase'
                 component = {TablaFrase}
-                options={{ headerShown: false }}
+                options={{title:"Listado de Frases"}}
             />
             <Stack.Screen
                 name = 'TablaNoticia'
                 component = {TablaNoticia}
-                options={{ headerShown: false }}
+                options={{title:"Listado de Noticias"}}
             />
             <Stack.Screen
                 name = 'TablaJuego'
                 component = {TablaJuego}
-                options={{ headerShown: false }}
+                options={{title:"Listado de Juegos"}}
             />
             <Stack.Screen
                 name = 'rPostest'
                 component = {RPostest}
-                options={{ headerShown: false }}
+                options={{title:"Cuestionario de Postest"}}
             />
             <Stack.Screen
                 name = 'rFrase'
                 component = {RFrase}
-                options={{ headerShown: false }}
+                options={{title:"Añadir Frase"}}
             />
             <Stack.Screen
                 name = 'rCancion'
                 component = {RCancion}
-                options={{ headerShown: false }}
+                options={{title:"Añadir Canción"}}
             />
             <Stack.Screen
                 name = 'rEjercicio'
                 component = {REjercicio}
-                options={{ headerShown: false }}
+                options={{title:"Añadir Ejercicio"}}
             />
             <Stack.Screen
                 name = 'rPretest'
                 component = {RPretest}
-                options={{ headerShown: false }}
+                options={{title:"Cuestionario de Pretest"}}
             />
             <Stack.Screen
                 name = 'rNoticia'
                 component = {RNoticia}
-                options={{ headerShown: false }}
+                options={{title:"Añadir Noticia"}}
             />
             <Stack.Screen
                 name = 'rJuego'
                 component = {RJuego}
-                options={{ headerShown: false }}
+                options={{title:"Añadir Juego"}}
             />
             
         </Stack.Navigator>

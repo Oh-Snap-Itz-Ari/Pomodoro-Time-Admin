@@ -117,7 +117,7 @@ export default function rCancion({navigation}) {
     }
 
     return (
-            <ScrollView>
+            <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el nombre de una canción:</Text>
                     <TextInput selectTextOnFocus={true} name= "nombre" style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
@@ -154,10 +154,13 @@ export default function rCancion({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingTop: '9%',
         marginHorizontal: '4%'
     },
     questions: {
@@ -168,6 +171,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 14,
+        fontWeight: 'bold'
     },
     buttonText: {
         color: 'white',
