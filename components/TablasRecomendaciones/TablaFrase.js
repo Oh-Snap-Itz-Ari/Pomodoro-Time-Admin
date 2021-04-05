@@ -27,11 +27,12 @@ const TablaFrase = (props) => {
         db.collection('RFrase').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {frase, autorfrase} = doc.data() 
+                const {frase, autorfrase, linkbiografia} = doc.data() 
                 respuestas.push({
                     id: doc.id,
                     frase,
-                    autorfrase
+                    autorfrase,
+                    linkbiografia
                 })
             })
         setRespuestas(respuestas)
@@ -53,6 +54,7 @@ const TablaFrase = (props) => {
                                 <ListItem.Title>Frase</ListItem.Title>
                                 <ListItem.Subtitle>"{respuesta.frase}"</ListItem.Subtitle>
                                 <ListItem.Subtitle>- {respuesta.autorfrase}</ListItem.Subtitle>
+                                <ListItem.Subtitle>Link Biografía: {respuesta.linkbiografia}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

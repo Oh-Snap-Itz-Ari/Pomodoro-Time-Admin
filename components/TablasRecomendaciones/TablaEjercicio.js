@@ -27,10 +27,11 @@ const TablaEjercicio = (props) => {
         db.collection('REjercicio').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {ejercicio} = doc.data() 
+                const {ejercicio, linkyoutube} = doc.data() 
                 respuestas.push({
                     id: doc.id,
-                    ejercicio
+                    ejercicio,
+                    linkyoutube,
                 })
             })
         setRespuestas(respuestas)
@@ -51,6 +52,7 @@ const TablaEjercicio = (props) => {
                             <ListItem.Content>
                                 <ListItem.Title>Ejercicio</ListItem.Title>
                                 <ListItem.Subtitle>{respuesta.ejercicio}</ListItem.Subtitle>
+                                <ListItem.Subtitle>Link YouTube: {respuesta.linkyoutube}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

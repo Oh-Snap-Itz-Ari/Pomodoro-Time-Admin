@@ -24,6 +24,7 @@ export default function rFrase({navigation}) {
     const [state, setState] = useState({
         frase: "",
         autorfrase: "",
+        linkbiografia: "",
     })
 
     const EstablecerTexto = (frase, value) => {
@@ -34,6 +35,7 @@ export default function rFrase({navigation}) {
         await db.collection('RFrase').add({
             frase: state.frase,
             autorfrase: state.autorfrase,
+            linkbiografia: state.linkbiografia,
         })
         Alert.alert(
             '✅ Proceso exitoso',
@@ -42,7 +44,7 @@ export default function rFrase({navigation}) {
     }
 
     const Confirmacion = () => {
-        if(state.frase === '' && state.autorfrase === ''){
+        if(state.frase === '' && state.autorfrase === '' && state.linkbiografia === ''){
             Alert.alert(
               '⚠️ Campos vacios',
               'Debe de llenar todos los campos.',
@@ -68,18 +70,30 @@ export default function rFrase({navigation}) {
           )
       }
 
-      else if(state.autorfrase === ''){
-        Alert.alert(
-          '⚠️ Autor de la frase',
-          'El campo de autor esta vacío.',
-          [
-            {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-            {text: 'OK', onPress: () => console.log('OK Pressed')},
-          ],
-          { cancelable: false }
-      )
-  }
+        else if(state.autorfrase === ''){
+            Alert.alert(
+            '⚠️ Autor de la frase',
+            'El campo de autor esta vacío.',
+            [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        )
+    }
+        else if(state.linkbiografia === ''){
+            Alert.alert(
+            '⚠️ Autor de la frase',
+            'El campo de autor esta vacío.',
+            [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        )
+    }
 
         else{
             crearFrase();
@@ -95,6 +109,10 @@ export default function rFrase({navigation}) {
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa el autor de la frase:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el autor de la frase" onChangeText={(value) => EstablecerTexto('autorfrase', value)}></TextInput>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>Ingresa el link de la Biografía:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el link de la biografía" onChangeText={(value) => EstablecerTexto('linkbiografia', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>

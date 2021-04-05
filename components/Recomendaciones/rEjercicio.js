@@ -23,6 +23,7 @@ export default function rEjercicio({navigation}) {
 
     const [state, setState] = useState({
         ejercicio: "",
+        linkyoutube: "",
     })
 
     const EstablecerTexto = (ejercicio, value) => {
@@ -32,6 +33,7 @@ export default function rEjercicio({navigation}) {
     const crearEjercicio = async() => {
         await db.collection('REjercicio').add({
             ejercicio: state.ejercicio,
+            linkyoutube: state.linkyoutube,
         })
         Alert.alert(
             '✅ Proceso exitoso',
@@ -40,7 +42,7 @@ export default function rEjercicio({navigation}) {
     }
 
     const Confirmacion = () => {
-        if(state.ejercicio === ''){
+        if(state.ejercicio === '' && state.linkyoutube === ''){
             Alert.alert(
               '⚠️ Campos vacios',
               'Debe de llenar todos los campos.',
@@ -50,6 +52,32 @@ export default function rEjercicio({navigation}) {
                 {text: 'OK', onPress: () => console.log('OK Pressed')},
               ],
               { cancelable: false }
+            )
+        }
+
+            else if(state.ejercicio === ''){
+                Alert.alert(
+                '⚠️ Ejercicio',
+                'El campo ejercicio esta vacío.',
+                [
+                    {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                    {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                    {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+            )
+        }
+
+            else if(state.linkyoutube === ''){
+                Alert.alert(
+                '⚠️ Link de YouTube',
+                'El campo Link de YouTube esta vacío.',
+                [
+                    {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                    {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                    {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
             )
         }
         else{
@@ -62,6 +90,10 @@ export default function rEjercicio({navigation}) {
             <View style={styles.center}>
                 <Text style={styles.text}>Ingresa un ejercicio para recomendar:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el ejercicio" onChangeText={(value) => EstablecerTexto('ejercicio', value)}></TextInput>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>Ingresa el Link de YouTube:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el link de YouTube" onChangeText={(value) => EstablecerTexto('linkyoutube', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>

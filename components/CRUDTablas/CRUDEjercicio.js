@@ -23,6 +23,7 @@ const CRUDEjercicio = (props) => {
     const initialState = {
         id: "",
         ejercicio: "",
+        linkyoutube: "",
     }
 
     const [respuesta, setRespuesta] = useState(initialState);
@@ -58,6 +59,7 @@ const CRUDEjercicio = (props) => {
         const dbRef = db.collection('REjercicio').doc(respuesta.id);
         await dbRef.set({
             ejercicio: respuesta.ejercicio,
+            linkyoutube: respuesta.linkyoutube,
         });
         setRespuesta(initialState)
         props.navigation.navigate('TablaEjercicio')
@@ -87,6 +89,10 @@ const CRUDEjercicio = (props) => {
             <View style={styles.center}>
                 <Text style={styles.text}>Sugerencia de ejercicio:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.ejercicio} onChangeText={(value) => EstablecerTexto("ejercicio", value)}></TextInput>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>Link de YouTube:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.linkyoutube} onChangeText={(value) => EstablecerTexto("linkyoutube", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>

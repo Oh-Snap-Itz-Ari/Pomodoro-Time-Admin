@@ -24,6 +24,7 @@ const CRUDFrase = (props) => {
         id: "",
         frase: "",
         autorfrase: "",
+        linkbiografia: "",
     }
 
     const [respuesta, setRespuesta] = useState(initialState);
@@ -60,6 +61,7 @@ const CRUDFrase = (props) => {
         await dbRef.set({
             frase: respuesta.frase,
             autorfrase: respuesta.autorfrase,
+            linkbiografia: respuesta.linkbiografia,
         });
         setRespuesta(initialState)
         props.navigation.navigate('TablaFrase')
@@ -93,6 +95,10 @@ const CRUDFrase = (props) => {
             <View style={styles.center}>
                 <Text style={styles.text}>Autor de la frase:</Text>
                     <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.autorfrase} onChangeText={(value) => EstablecerTexto("autorfrase", value)}></TextInput>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>Link de la Biografía:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.linkbiografia} onChangeText={(value) => EstablecerTexto("linkbiografia", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>
