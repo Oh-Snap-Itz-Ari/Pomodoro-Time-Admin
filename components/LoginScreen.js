@@ -71,7 +71,7 @@ export default class login extends React.Component{
             else if(email === ''){
               Alert.alert(
                 '⚠️ Correo electrónico',
-                'El correo electrónico que ingresaste no coincide con ninguna cuenta.',
+                'Por favor ingrese un correo electrónico.',
                 [
                   {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
@@ -83,7 +83,7 @@ export default class login extends React.Component{
             else if(password === ''){
               Alert.alert(
                 '⚠️ Contraseña',
-                'La contraseña que ingresaste no coincide con ninguna cuenta.',
+                'Por favor ingrese una contraseña.',
                 [
                   {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
