@@ -53,7 +53,7 @@ export default function cSeguimiento({navigation}) {
                                 <ListItem.Subtitle>1. Correo electrónico: {respuesta.primera}</ListItem.Subtitle>
                                 <ListItem.Subtitle>2. ¿Durante esta semana cuántas veces al día utilizó Pomodoro Time? - {respuesta.segunda}</ListItem.Subtitle>
                                 <ListItem.Subtitle>3. ¿Durante esta semana cuánto duró en culminar una actividad aproximadamente? - {respuesta.tercera}</ListItem.Subtitle>
-                                <ListItem.Subtitle>4. ¿Cuántas veces a la semana utilizo Pomodoro Time aproximadamente? - {respuesta.cuarta}</ListItem.Subtitle>
+                                <ListItem.Subtitle>4. ¿Cuántas veces a la semana utilizó Pomodoro Time aproximadamente? - {respuesta.cuarta}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

@@ -63,7 +63,7 @@ export default function rPretest({navigation}) {
                                 <ListItem.Subtitle>5. ¿Ha utilizado con anterioridad aplicaciones de gestión de tiempo?: {respuesta.quinta}</ListItem.Subtitle>
                                 <ListItem.Subtitle>6. ¿Considera necesario una planeación y una organización al momento de realizar una actividad?: {respuesta.sexta}</ListItem.Subtitle>
                                 <ListItem.Subtitle>7. ¿Ha oído hablar de la técnica de trabajo Pomodoro?: {respuesta.septima}</ListItem.Subtitle>
-                                <ListItem.Subtitle>8. ¿Consideraría necesaria la creación de una aplicación móvil que permitiera gestionar su tiempo?: {respuesta.octava}</ListItem.Subtitle>
+                                <ListItem.Subtitle>8. ¿Consideraría necesaria la creación de una aplicación móvil que permita gestionar su tiempo?: {respuesta.octava}</ListItem.Subtitle>
                                 <ListItem.Subtitle>9. ¿Cree usted que las pausas activas estimulan el aprendizaje?: {respuesta.novena}</ListItem.Subtitle>
                                 <ListItem.Subtitle>10. ¿Estaría a favor de la implementación de un gestor de tiempo con pausas activas de 5 minutos cada 25 minutos de clase?: {respuesta.decima}</ListItem.Subtitle>
                             </ListItem.Content>
