@@ -17,16 +17,16 @@ const Tab = createMaterialBottomTabNavigator();
 const MainTabScreen = () => (
     <Tab.Navigator
       initialRouteName="rCancionH"
-      activeColor="#fff"
+      activeColor="#007AFF"
     >
       <Tab.Screen
         name="rCancionH"
         component={RCancionH}
         options={{
           tabBarLabel: 'Canción',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-musical-notes" color={color} size={25} />
+            <Ionicons name="ios-musical-notes" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -35,9 +35,9 @@ const MainTabScreen = () => (
         component={RJuegoH}
         options={{
           tabBarLabel: 'Juego',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-game-controller" color={color} size={25} />
+            <Ionicons name="ios-game-controller" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -46,9 +46,9 @@ const MainTabScreen = () => (
         component={REjercicioH}
         options={{
           tabBarLabel: 'Ejercicio',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-walk" color={color} size={25} />
+            <Ionicons name="ios-walk" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -57,9 +57,9 @@ const MainTabScreen = () => (
         component={RFraseH}
         options={{
           tabBarLabel: 'Frase',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-book" color={color} size={25} />
+            <Ionicons name="ios-book" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -68,9 +68,9 @@ const MainTabScreen = () => (
         component={RNoticiaH}
         options={{
           tabBarLabel: 'Noticia',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-globe" color={color} size={25} />
+            <Ionicons name="ios-globe" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -78,10 +78,10 @@ const MainTabScreen = () => (
         name="rPretestPostestH"
         component={RPretestPostestH}
         options={{
-          tabBarLabel: 'Test',
-          tabBarColor: '#1f65ff',
+          tabBarLabel: 'Opciones',
+          tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-document" color={color} size={25} />
+            <Ionicons name="ios-settings" color={'#007AFF'} size={25} />
           ),
         }}
       />

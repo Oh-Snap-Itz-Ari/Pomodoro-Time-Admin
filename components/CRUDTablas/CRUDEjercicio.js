@@ -86,13 +86,13 @@ const CRUDEjercicio = (props) => {
 
     return(
         <ScrollView style={styles.background}>
-            <View style={styles.center}>
-                <Text style={styles.text}>Sugerencia de ejercicio:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.ejercicio} onChangeText={(value) => EstablecerTexto("ejercicio", value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Ingresa un ejercicio:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} value={respuesta.ejercicio} onChangeText={(value) => EstablecerTexto("ejercicio", value)}></TextInput>
             </View>
-            <View style={styles.center}>
+            <View style={styles.questions}>
                 <Text style={styles.text}>Link de YouTube:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} value={respuesta.linkyoutube} onChangeText={(value) => EstablecerTexto("linkyoutube", value)}></TextInput>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} value={respuesta.linkyoutube} onChangeText={(value) => EstablecerTexto("linkyoutube", value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress ={() => updateRespuesta()}>
@@ -122,23 +122,22 @@ const styles = StyleSheet.create({
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '8%',
+        paddingTop: '9%',
         marginHorizontal: '4%'
     },
     questions: {
-        flex: 1,
         width: '80%',
-        marginHorizontal: '4%',
+        justifyContent: 'center',
+        alignContent: 'center',
+        marginHorizontal: '8%',
         paddingTop: '2%',
+        marginVertical: '1%',
     },
     text: {
+        marginHorizontal: 3,
+        fontFamily: 'regularO',
+        textAlign: 'justify',
         fontSize: 14,
-        fontWeight: 'bold'
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 14,
-        textAlign: 'center',
     },
     container: {
         flex: 1,
@@ -146,16 +145,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '7%',
-
+    buttonText: {
+        fontFamily: 'regularM',
+        color: 'white',
+        fontSize: 14,
+        textAlign: 'center',
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
-    }
+        backgroundColor: "#1f65ff",
+    },
 });

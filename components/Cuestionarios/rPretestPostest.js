@@ -13,7 +13,7 @@ export default function rPretestPostest({navigation}) {
     return (
             <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Seleccione que cuestionario desea observar:</Text>
+                <Text style={styles.text}>Opciones</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('rPretest')}>
@@ -50,12 +50,13 @@ export default function rPretestPostest({navigation}) {
 
 const styles = StyleSheet.create({
     background:{
-        backgroundColor: "white",
+        paddingTop: '10%',
+        backgroundColor: "white"
     },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingVertical: '5%',
         marginHorizontal: '4%'
     },
     questions: {
@@ -65,12 +66,14 @@ const styles = StyleSheet.create({
         paddingTop: '2%',
     },
     text: {
-        fontSize: 14,
+        fontFamily: "boldM",
+        fontSize: 20,
     },
     buttonText: {
-        color: 'white',
+        color: "white",
+        fontFamily: 'regularM',
         fontSize: 14,
-        textAlign: 'center',
+        textAlign: "center",
     },
     container: {
         flex: 1,
@@ -80,14 +83,12 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         flex: 1,
-        marginHorizontal: '7%',
-
+        marginHorizontal: '10%',
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
+        backgroundColor: "#1f65ff",
     }
 });

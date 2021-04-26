@@ -118,30 +118,30 @@ export default function rCancion({navigation}) {
 
     return (
             <ScrollView style={styles.background}>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa el nombre de una canción:</Text>
-                    <TextInput selectTextOnFocus={true} name= "nombre" style={{marginVertical: '2%'}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Nombre de una canción:</Text>
+                    <TextInput selectTextOnFocus={true} name= "nombre" style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa el nombre de la canción" onChangeText={(value) => EstablecerTexto('nombrecancion', value)}></TextInput>
             </View>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa el autor de una canción:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el autor de la canción" onChangeText={(value) => EstablecerTexto('autorcancion', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Autor de una canción:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa el autor de la canción" onChangeText={(value) => EstablecerTexto('autorcancion', value)}></TextInput>
             </View>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa el álbum de una canción:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el álbum de la canción" onChangeText={(value) => EstablecerTexto('albumcancion', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Álbum de una canción:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa el álbum de la canción" onChangeText={(value) => EstablecerTexto('albumcancion', value)}></TextInput>
             </View>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa el link de la canción:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el link de la canción" onChangeText={(value) => EstablecerTexto('linkcancion', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Link de la canción:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa el link de la canción" onChangeText={(value) => EstablecerTexto('linkcancion', value)}></TextInput>
             </View>
-            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+            <View style={{marginVertical: '5%', marginHorizontal: '15%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Enviar</Text>
                 </View>
                 </TouchableOpacity>
             </View>
-            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+            <View style={{marginVertical: '1%', marginHorizontal: '15%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('TablaCancion')}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Ver Tabla</Text>
@@ -164,19 +164,18 @@ const styles = StyleSheet.create({
         marginHorizontal: '4%'
     },
     questions: {
-        flex: 1,
         width: '80%',
-        marginHorizontal: '4%',
+        justifyContent: 'center',
+        alignContent: 'center',
+        marginHorizontal: '8%',
         paddingTop: '2%',
+        marginVertical: '1%',
     },
     text: {
+        marginHorizontal: 3,
+        fontFamily: 'regularO',
+        textAlign: 'justify',
         fontSize: 14,
-        fontWeight: 'bold'
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 14,
-        textAlign: 'center',
     },
     container: {
         flex: 1,
@@ -184,15 +183,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '7%',
+    buttonText: {
+        fontFamily: 'regularM',
+        color: 'white',
+        fontSize: 14,
+        textAlign: 'center',
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
-        marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
-    }
+        borderRadius: 25,
+        paddingVertical: 12,
+        backgroundColor: "#1f65ff",
+    },
 });

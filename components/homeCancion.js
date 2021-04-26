@@ -1,8 +1,37 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import "firebase/firestore";
+import { AppLoading } from "expo";
+import {
+    useFonts,
+    OpenSans_400Regular,
+    OpenSans_600SemiBold,
+    OpenSans_700Bold,
+} from "@expo-google-fonts/open-sans";
+import {
+    Montserrat_300Light,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
+    Montserrat_800ExtraBold,
+} from "@expo-google-fonts/montserrat";
+import { Icon } from "react-native-elements";
 
 export default function homeCancion({ navigation }) {
+    let [fontsLoaded, error] = useFonts({
+        regularO: OpenSans_400Regular,
+        semiBoldO: OpenSans_600SemiBold,
+        boldO: OpenSans_700Bold,
+        lightM: Montserrat_300Light,
+        regularM: Montserrat_400Regular,
+        mediumM: Montserrat_500Medium,
+        boldM: Montserrat_700Bold,
+        extraBoldM: Montserrat_800ExtraBold,
+    });
+
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    }
 
     return (
         <View style={styles.container}>
@@ -33,13 +62,14 @@ const styles = StyleSheet.create({
     },
     top: {
         paddingHorizontal: 24,
-        backgroundColor: "white",
     },
     text: {
+        fontFamily: "boldM",
         fontSize: 30,
     },
     basetext: {
         fontSize: 13,
+        fontFamily: "semiBoldO",
         paddingBottom: 30,
         paddingVertical: 5,
     },
@@ -49,6 +79,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
+        fontFamily: 'regularM',
         fontSize: 14,
         textAlign: "center",
     },

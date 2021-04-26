@@ -104,17 +104,17 @@ export default function rNoticia({navigation}) {
 
     return (
             <ScrollView style={styles.background}>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa un titulo para la noticia:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa el titulo de la noticia" onChangeText={(value) => EstablecerTexto('titulonoticia', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Titulo para la noticia:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa el titulo de la noticia" onChangeText={(value) => EstablecerTexto('titulonoticia', value)}></TextInput>
             </View>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa una especificación para la noticia:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa la especificación de la noticia" onChangeText={(value) => EstablecerTexto('especificacionnoticia', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Especificación para la noticia:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa la especificación de la noticia" onChangeText={(value) => EstablecerTexto('especificacionnoticia', value)}></TextInput>
             </View>
-            <View style={styles.center}>
-                <Text style={styles.text}>Ingresa la fuente de la noticia:</Text>
-                    <TextInput selectTextOnFocus={true} style={{marginVertical: '2%'}} placeholder="Ingresa la fuente de la noticia" onChangeText={(value) => EstablecerTexto('fuentenoticia', value)}></TextInput>
+            <View style={styles.questions}>
+                <Text style={styles.text}>Fuente de la noticia:</Text>
+                    <TextInput selectTextOnFocus={true} style={{marginHorizontal: 3,  borderWidth: 1, borderColor: '#344953', borderRadius: 5, marginVertical: '3%', fontFamily: 'regularO', paddingVertical: 8, paddingLeft:10}} placeholder="Ingresa la fuente de la noticia" onChangeText={(value) => EstablecerTexto('fuentenoticia', value)}></TextInput>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => Confirmacion()}>
@@ -146,19 +146,18 @@ const styles = StyleSheet.create({
         marginHorizontal: '4%'
     },
     questions: {
-        flex: 1,
         width: '80%',
-        marginHorizontal: '4%',
+        justifyContent: 'center',
+        alignContent: 'center',
+        marginHorizontal: '8%',
         paddingTop: '2%',
+        marginVertical: '1%',
     },
     text: {
+        marginHorizontal: 3,
+        fontFamily: 'regularO',
+        textAlign: 'justify',
         fontSize: 14,
-        fontWeight: 'bold'
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 14,
-        textAlign: 'center',
     },
     container: {
         flex: 1,
@@ -166,16 +165,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '7%',
-
+    buttonText: {
+        fontFamily: 'regularM',
+        color: 'white',
+        fontSize: 14,
+        textAlign: 'center',
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
-    }
+        backgroundColor: "#1f65ff",
+    },
 });

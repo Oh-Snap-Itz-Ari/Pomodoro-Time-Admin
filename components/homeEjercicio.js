@@ -35,10 +35,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 24,
     },
     text: {
+        fontFamily: "boldM",
         fontSize: 30,
     },
     basetext: {
         fontSize: 13,
+        fontFamily: "semiBoldO",
         paddingBottom: 30,
         paddingVertical: 5,
     },
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
+        fontFamily: 'regularM',
         fontSize: 14,
         textAlign: "center",
     },
