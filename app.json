@@ -21,7 +21,8 @@
     },
     "android": {
       "package": "com.mrinsheloots.pomodorotimeadmin",
-      "versionCode": 1
+      "versionCode": 1,
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
