@@ -17,73 +17,49 @@ if (!firebase.apps.length){
     firebase.initializeApp(firebaseConfig);
 }
 
-export default class login extends React.Component{
+export default class ForgotPassword extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {email:'', password:'', error:'', loading:false};
+        this.state = {email:'', error:'', loading:false};
     }
     onLoginPress(){
         this.setState({error:'', loading:true});
-        const{email, password} = this.state;
-        firebase.auth().signInWithEmailAndPassword(email, password)
+
+        const{email} = this.state;
+        firebase.auth().sendPasswordResetEmail(email)
         .then(() =>{
-          
-            if(email === 'afmelo@ucundinamarca.edu.co'){
-              this.setState({error:'',loading:false});
-              this.props.navigation.navigate('MainHome');}
+          if(email === 'afmelo@ucundinamarca.edu.co'){
+            this.setState({error:'',loading:false});
+            this.props.navigation.navigate('LoginScreen');}
 
-            else if(email === 'diegoalexanderdiaz@ucundinamarca.edu.co'){
-              this.setState({error:'',loading:false});
-              this.props.navigation.navigate('MainHome');}
+          else if(email === 'diegoalexanderdiaz@ucundinamarca.edu.co'){
+            this.setState({error:'',loading:false});
+            this.props.navigation.navigate('LoginScreen');}
 
-            else if(email === 'aparenas@ucundinamarca.edu.co'){
-                this.setState({error:'',loading:false});
-                this.props.navigation.navigate('MainHome');}
-            else{
-            Alert.alert(
-              '⚠️ Datos invalidos',
-              'Los datos que ingresaste no coinciden con los de un administrador.',
-              [
-                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-              ],
-              { cancelable: false }
-            )
-            }
-            
+          else if(email === 'aparenas@ucundinamarca.edu.co'){
+              this.setState({error:'',loading:false});
+              this.props.navigation.navigate('LoginScreen');}
+          else{
+          Alert.alert(
+            '⚠️ Datos invalidos',
+            'El correo electrónico ingresado no coincide con el de un administrador.',
+            [
+              {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+              {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+          )
+          }
+
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
-            if(email === '' && password === ''){
+            if(email === ''){
               Alert.alert(
                 '⚠️ Campos vacios',
-                'Ingrese correo electrónico y contraseña.',
-                [
-                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                  {text: 'OK', onPress: () => console.log('OK Pressed')},
-                ],
-                { cancelable: false }
-              )
-            }
-            else if(email === ''){
-              Alert.alert(
-                '⚠️ Correo electrónico',
-                'Por favor ingrese un correo electrónico.',
-                [
-                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                  {text: 'OK', onPress: () => console.log('OK Pressed')},
-                ],
-                { cancelable: false }
-              )
-            }
-            else if(password === ''){
-              Alert.alert(
-                '⚠️ Contraseña',
-                'Por favor ingrese una contraseña.',
+                'Ingrese un correo electrónico.',
                 [
                   {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
@@ -94,8 +70,8 @@ export default class login extends React.Component{
             }
             else{
             Alert.alert(
-              '⚠️ Datos invalidos',
-              'Los datos que ingresaste no coinciden con ninguna cuenta.',
+              '⚠️ Datos invalidos.',
+              'El correo electrónico ingresado no coincide con ninguna cuenta.',
               [
                 {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                 {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
@@ -106,15 +82,11 @@ export default class login extends React.Component{
             }
         })
     }
-
-        onForgotPasswordPress(){
-          this.props.navigation.navigate('RestablecerContraseña')
-        }
 
         renderButtonOrLoading(){
             return <View>
                 <TouchableOpacity style={styles.login} onPress={this.onLoginPress.bind(this)}>
-                  <Text style={styles.textLogin}>Iniciar sesión</Text>
+                  <Text style={styles.textLogin}>Restablecer</Text>
                 </TouchableOpacity>
             </View>
         }
@@ -128,42 +100,21 @@ export default class login extends React.Component{
         render(){
             return(
                     <View style={styles.container}>
-                    <Text style={styles.title}>Inicio sesión (Administrador)</Text>
-                    <Text style={styles.text}>Por favor ingresa los siguientes datos.</Text>
-                      
+                      <Text style={styles.title}>Restablecer contraseña</Text>
+                      <Text style={styles.text}>Pomodoro time te enviará un correo electrónico con el enlace para restablecer la contraseña.</Text>
                     <View style={styles.action}>
                       <View style={[styles.section,{borderColor:this.state.borderColor=="email" ? '#3465d9' : 'gray'}]}>
-
                         <MaterialIcons name="email" size={20}
-                        color={this.state.borderColor=="email" ? '#3465d9' : 'gray'} />
-
+                          color={this.state.borderColor=="email" ? '#3465d9' : 'gray'} />
                         <TextInput style={[styles.textInput,{color:this.state.borderColor=="email" ? '#3465d9' : 'gray'}]} value= {this.state.email} onChangeText={email => this.setState({email})}
                           placeholder="Correo electrónico" 
                           onFocus={()=>this.onFocus("email")}
                         />
                       </View>
-                      
-                      <View style={[styles.section,{borderColor:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}>
-                        <MaterialIcons name="lock-outline" size={20} 
-                        color={this.state.borderColor=="password" ? '#3465d9' : 'gray'}/>
-                        <TextInput value= {this.state.password} onChangeText={password => this.setState({password})} 
-                        placeholder="Contraseña" secureTextEntry
-                        onFocus={()=>this.onFocus("password")} 
-                        style={[styles.textInput, {color:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}/>
-                      </View>
                     </View>
-
-                    {this.renderButtonOrLoading()}
-                    <View style={styles.signup}>
-                        <TouchableOpacity onPress={this.onForgotPasswordPress.bind(this)}>
-                          <Text style={[styles.textSingup, {color: '#3465d9', marginLeft: 3}]}>¿Olvidaste tu contraseña?</Text>
-                        </TouchableOpacity>
-                    </View>
+                      {this.renderButtonOrLoading()}
                   </View>
-            
-    
             )
-
         }
     }
 
@@ -202,7 +153,6 @@ const styles = StyleSheet.create({
       textInput: {
         flex: 1,
         paddingLeft: 10,
-
       },
       textLogin: {
         color: 'white',

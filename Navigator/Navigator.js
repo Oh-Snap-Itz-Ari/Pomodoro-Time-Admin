@@ -2,6 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import MainHome from '../components/MainHome'
 import LoginScreen from '../components/LoginScreen'
+import ForgotPassword from '../components/ForgotPassword'
 import RPretest from '../components/Cuestionarios/rPretest'
 import RPostest from '../components/Cuestionarios/rPostest'
 import CSeguimiento from '../components/Cuestionarios/cSeguimiento'
@@ -35,6 +36,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'LoginScreen'
                 component = {LoginScreen}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'RestablecerContraseña'
+                component = {ForgotPassword}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
