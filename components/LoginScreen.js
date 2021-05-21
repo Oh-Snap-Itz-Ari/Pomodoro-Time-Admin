@@ -21,7 +21,7 @@ export default class login extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {email:'', password:'', error:'', loading:false};
+        this.state = {email:'', password:'', error:'', loading:false, hidePassword: true};
     }
     onLoginPress(){
         this.setState({error:'', loading:true});
@@ -125,6 +125,10 @@ export default class login extends React.Component{
           });
         }
 
+        setPasswordVisibility = () => {
+          this.setState({ hidePassword: !this.state.hidePassword });
+        }
+
         render(){
             return(
                     <View style={styles.container}>
@@ -147,10 +151,13 @@ export default class login extends React.Component{
                         <MaterialIcons name="lock-outline" size={20} 
                         color={this.state.borderColor=="password" ? '#3465d9' : 'gray'}/>
                         <TextInput value= {this.state.password} onChangeText={password => this.setState({password})} 
-                        placeholder="Contraseña" secureTextEntry
+                        placeholder="Contraseña" secureTextEntry={this.state.hidePassword}
                         onFocus={()=>this.onFocus("password")} 
                         style={[styles.textInput, {color:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}/>
-                      </View>
+                        <TouchableOpacity activeOpacity={0.8} onPress={this.setPasswordVisibility}>
+                          <MaterialIcons name="visibility" size={20} color={this.state.borderColor=="password" ? '#3465d9' : 'gray'}/>
+                        </TouchableOpacity>
+                        </View>
                     </View>
 
                     {this.renderButtonOrLoading()}
